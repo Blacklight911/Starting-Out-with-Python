@@ -1,5 +1,4 @@
 """Алгоритмический тренажер"""
-import math
 import turtle
 
 # height = input('Введите свой рост')
@@ -107,7 +106,8 @@ import turtle
 # how_much_man = int(input('Количество учащихся юношей: '))
 # how_much_woman = int(input('Количество учащихся девушек: '))
 # how_much_all = how_much_man + how_much_woman
-# print(f'Учащихся мужского пола {how_much_man / how_much_all:.0%}. Учащихся женского пола {how_much_woman / how_much_all:.0%}')
+# print(f'Учащихся мужского пола {how_much_man / how_much_all:.0%}. \
+# Учащихся женского пола {how_much_woman / how_much_all:.0%}')
 
 # # Программа расчета купли-продажи акции.
 # total_shares = 2000
@@ -129,12 +129,34 @@ import turtle
 # S = int(input('Введите расстояние между виноградными лозами в метрах '))
 # print('Количество виноградных лоз, которые поместятся на гряде', R - 2 * E / S)
 
+
 # Сложный процент
-P = int(input('Введите основную сумму '))
-r = int(input('Введите годовую процентную ставку(от 0 до 100) ')) / 100
-n = int(input('Введите частоту начисления процентного дохода в год(Например, если проценты '
-              'начисляются ежемесячно, то введите 12; если процентный доход начисляется '
-              'ежеквартально, то ввести 4 '))
-t = int(input('Введите количество лет '))
-A = (P * ((1 + r) / n)) ** (n * t)
-print('Через', t, 'лет доход составит', A)
+# P = int(input('Введите основную сумму '))
+# r = int(input('Введите годовую процентную ставку(от 0 до 100) ')) / 100
+# n = int(input('Введите частоту начисления процентного дохода в год(Например, если проценты '
+#               'ежеквартально, то ввести 4 '))
+# t = int(input('Введите количество лет '))
+# A = (P * ((1 + r) / n)) ** (n * t)
+# print('Через', t, 'лет доход составит', A)
+
+# Рисунки черепашьей графики
+# Двойной ромб
+Rhombus = turtle.Turtle()
+Rhombus.penup()
+# Rhombus.goto(-280, 250)
+Rhombus.pendown()
+Rhombus.color('brown')
+Rhombus.begin_fill()
+Rhombus.left(60)
+Rhombus.fd(60)
+Rhombus.left(90)
+Rhombus.fd(60)
+Rhombus.left(90)
+Rhombus.fd(60)
+Rhombus.left(90)
+Rhombus.fd(60)
+# for _ in range(3):
+#     Rhombus.left(190)
+#     Rhombus.forward(90)
+Rhombus.end_fill()
+turtle.done()

@@ -1,4 +1,4 @@
-"""Алгоритмический тренажер"""
+"""Алгоритмический тренажер, Лабораторные работы часть 2"""
 import turtle
 
 # height = input('Введите свой рост')
@@ -130,10 +130,10 @@ import turtle
 # print('Количество виноградных лоз, которые поместятся на гряде', R - 2 * E / S)
 
 
-# Сложный процент
+# # Сложный процент
 # P = int(input('Введите основную сумму '))
 # r = int(input('Введите годовую процентную ставку(от 0 до 100) ')) / 100
-# n = int(input('Введите частоту начисления процентного дохода в год(Например, если проценты '
+# n = int(input('Введите частоту начисления процентного дохода в год(Например, если проценты'
 #               'ежеквартально, то ввести 4 '))
 # t = int(input('Введите количество лет '))
 # A = (P * ((1 + r) / n)) ** (n * t)
@@ -143,20 +143,28 @@ import turtle
 # Двойной ромб
 Rhombus = turtle.Turtle()
 Rhombus.penup()
-# Rhombus.goto(-280, 250)
+Rhombus.goto(-280, 250)
 Rhombus.pendown()
-Rhombus.color('brown')
+Rhombus.color('black')
 Rhombus.begin_fill()
-Rhombus.left(60)
-Rhombus.fd(60)
-Rhombus.left(90)
-Rhombus.fd(60)
-Rhombus.left(90)
-Rhombus.fd(60)
-Rhombus.left(90)
-Rhombus.fd(60)
-# for _ in range(3):
-#     Rhombus.left(190)
-#     Rhombus.forward(90)
+for _ in range(2):
+    Rhombus.rt(120)
+    Rhombus.fd(100)
+    Rhombus.rt(120)
+    Rhombus.fd(100)
+    Rhombus.rt(60)
+    Rhombus.fd(100)
+    Rhombus.rt(120)
+    Rhombus.fd(100)
+    Rhombus.rt(120)
+    Rhombus.goto(-280, 250)
 Rhombus.end_fill()
+
+# Треугольник в треугольнике
+Triangle = turtle.Turtle()
+Triangle.penup()
+Triangle.goto(-100, 250)
+Triangle.pendown()
+Triangle.fd(20)
 turtle.done()
+

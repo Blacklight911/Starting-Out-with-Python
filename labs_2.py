@@ -48,15 +48,16 @@ import turtle
 # print('89978861974')
 # print('Информационные Технологии')
 
+# # Упражнения по программированию.
 # # Прогноз продаж.
 # total_sum = int(input('Введите плановую сумму объема продаж '))
 # print(int(total_sum * 0.23))
 
-# # Расчет площади земельного участка
+# # Расчет площади земельного участка.
 # land_plot = int(input('Введите общее количество квадратных метров земельного участка '))
 # print(land_plot / 4047)
 
-# # Общий объём продаж
+# # Общий объём продаж.
 # TAX = 0.07
 # all_tax = 0
 # all_price = 0
@@ -68,7 +69,7 @@ import turtle
 # print('Налог составил', all_tax)
 # print('Итоговая стоимость составила', all_price + all_tax)
 
-# # Пройденное расстояние
+# # Пройденное расстояние.
 # print('Расстояние, которое автомобиль пройдет за 6 часов:', 70 * 6)
 # print('Расстояние, которое автомобиль пройдет за 10 часов:', 70 * 10)
 # print('Расстояние, которое автомобиль пройдет за 15 часов:', 70 * 15)
@@ -88,11 +89,11 @@ import turtle
 # fuel_on_kilo = int(input('Введите расход бензина в литрах'))
 # print('Расход ', kilometers_covered / fuel_on_kilo)
 
-# # Чаевые налог и общая сумма
+# # Чаевые налог и общая сумма.
 # food_cost = int(input('Стоимость еды: '))
 # print('Общая стоимость:', food_cost + food_cost * 0.18 + food_cost * 0.07)
 
-# # Преобразователь температуры
+# # Преобразователь температуры.
 # num = int(input('Введите температуру: '))
 # print('Температура в Фаренгейтах:', 9 / 5 * num + 32)
 
@@ -130,7 +131,7 @@ import turtle
 # print('Количество виноградных лоз, которые поместятся на гряде', R - 2 * E / S)
 
 
-# # Сложный процент
+# # Сложный процент.
 # P = int(input('Введите основную сумму '))
 # r = int(input('Введите годовую процентную ставку(от 0 до 100) ')) / 100
 # n = int(input('Введите частоту начисления процентного дохода в год(Например, если проценты'
@@ -139,9 +140,9 @@ import turtle
 # A = (P * ((1 + r) / n)) ** (n * t)
 # print('Через', t, 'лет доход составит', A)
 
-# Рисунки черепашьей графики
+# Рисунки черепашьей графики.
 turtle.setup(800, 700)
-# Двойной ромб
+# Двойной ромб.
 Rhombus = turtle.Turtle()
 Rhombus.penup()
 Rhombus.goto(-280, 250)
@@ -162,7 +163,7 @@ for _ in range(2):
 Rhombus.end_fill()
 Rhombus.hideturtle()
 
-# Треугольник в треугольнике
+# Треугольник в треугольнике.
 Triangle = turtle.Turtle()
 Triangle.penup()
 Triangle.goto(-40, 160)
@@ -180,7 +181,7 @@ Triangle.fd(103)
 Triangle.end_fill()
 Triangle.hideturtle()
 
-# Круги
+# Круги.
 Circle = turtle.Turtle()
 Circle.penup()
 for x in range(-50, 140, 70):
@@ -195,7 +196,7 @@ for x in range(-15, 110, 70):
     Circle.penup()
 Circle.hideturtle()
 
-# Прямоугольный параллелепипед
+# Прямоугольный параллелепипед.
 Parallelepiped = turtle.Turtle()
 Parallelepiped.penup()
 Parallelepiped.goto(-280, 20)
@@ -224,7 +225,7 @@ Parallelepiped.pendown()
 Parallelepiped.fd(142)
 Parallelepiped.hideturtle()
 
-# Компас
+# Компас.
 Compas = turtle.Turtle()
 Compas.penup()
 Compas.goto(-330, -220)
@@ -256,7 +257,7 @@ Compas.pendown()
 Compas.write('Запад', align='center', font=('Arial', 10, 'normal'))
 Compas.hideturtle()
 
-# Квадрат
+# Квадрат.
 Square = turtle.Turtle()
 Square.penup()
 Square.goto(131, -221)
@@ -277,7 +278,7 @@ Square.dot(10)
 Square.lt(135)
 Square.fd(283)
 
-# Пунктирные лини квадрата
+# Пунктирные лини квадрата.
 Square.lt(135)
 Square.fd(20)
 Square.penup()
@@ -310,4 +311,4 @@ Square.pendown()
 Square.fd(20)
 Square.hideturtle()
 
-turtle.done()
+turtle.exitonclick()

@@ -68,4 +68,19 @@ import turtle
 # if 100 <= turtle.xcor() <= 200 and 100 <= turtle.ycor() <= 200:
 #     turtle.hideturtle()
 
-# # Упражнения по программированию.
+# # Programming Exercises
+# # Day of week
+value = input('Input day of week (1-7): ')
+week = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+
+try:
+    if int(value) > 0:
+        print(week[int(value)-1])
+
+except ValueError:
+    print('Enter value in range 1 - 7')
+
+else:
+    print('Enter value in range 1 - 7')
+
+# # Area of rectangles

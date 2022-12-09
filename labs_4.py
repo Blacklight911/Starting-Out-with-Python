@@ -103,5 +103,75 @@
 #
 # print('Expenses were $', dollars_per_month - sum_dollars)
 
-# Distance traveled.
+# # Distance traveled.
+# # User input.
+# speed = int(input('Enter vehicle speed: '))
+# hours = int(input('Enter number of hours: '))
+#
+# # Markup.
+# print('Hour   Distance traveled')
+# print('-------------------------')
+#
+# # Main program loop.
+# for hour in range(1, hours+1):
+#     print(f'{hour:>} {speed * hour:8}')
+#
+# # Average rainfall layer thickness.
+# # User input.
+# years = int(input('Enter number of years: '))
+# total_rainfall = 0
+#
+# # Main program loop.
+# for year in range(1, years+1):
+#     for month in range(1, 13):
+#         rainfall_amount = int(input('Enter the amount of rainfall during the month: '))
+#         total_rainfall += rainfall_amount
+#
+# print('Number of months: ', years * 12, 'Total millimeters of rainfall:', total_rainfall,
+#       'The average thickness of the rainfall layer per month during the entire period',
+#       total_rainfall // (years * 12))
 
+# Correspondence table between degrees Celsius and degrees Fahrenheit.
+# for t in range(21):
+#     print(f'Temperature in Celsius: {t:<2} Temperature in Fahrenheit {9 / 5 * t + 32:.0f}')
+
+# # Small coin for salary.
+# num_days = int(input('Enter the number of days worked: '))
+# total_salary = 0
+# print('Day    Salary')
+# print('-------------')
+#
+# for day in range(1, num_days+1):
+#     total_salary += day * 2
+#     print(f'{day:<2}  -  {day * 2:<2} cents')
+#
+# print('-----------------------------')
+# print(f'Salary before taxes: ${total_salary * 100 / 100:}c')
+# print(f'Total salary:        ${(total_salary * 100 - (total_salary * 100 * 0.13)) / 100:}c')
+#
+# # Sum of numbers.
+# num = int(input('Enter number, for sum, to stop program enter negative number: '))
+# all_num = 0
+#
+# while num > 0:
+#     num = int(input('Enter number: '))
+#     all_num += num
+#
+# print('Sum numbers =', all_num)
+
+# # Ocean Level.
+# # Variables.
+# ocean_level = 1.6
+# all_level = 0
+#
+# # Main program loop.
+# for year in range(1, 26):
+#     all_level += ocean_level
+#     print(f'In Year: {2022 + year} Ocean level: {all_level:.1f}mm')
+
+# Growth in tuition fees.
+per_year = 290000.0
+percent_per_year = 0.03
+for year in range(1, 5+1):
+    print(f'In year: {2022 + year} The tuition fee will be: {per_year:,.2f} rubles')
+    per_year = per_year + (per_year * percent_per_year)

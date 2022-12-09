@@ -373,17 +373,17 @@ import turtle
 
 # Turtle Graphics: Hit the Target Game Mod.
 # Constants
-SCREEN_WIDTH = 600    # Ширина экрана.
-SCREEN_HEIGHT = 600   # Высота экрана.
-TARGET_LLEFT_X = 100  # Левая нижняя координата X цели.
-TARGET_LLEFT_Y = 250  # Левая нижняя координата Y цели.
-TARGET_WIDTH = 25     # Ширина цели.
-FORCE_FACTOR = 30     # Фактор произвольной силы.
-PROJECTILE_SPEED = 1  # Скорость анимации снаряда.
-NORTH = 90            # Угол северного направления.
-SOUTH = 270           # Угол южного направления.
-EAST = 0              # Угол восточного направления.
-WEST = 180            # Угол западного направления.
+SCREEN_WIDTH = 600    # Screen width.
+SCREEN_HEIGHT = 600   # Screen height.
+TARGET_LLEFT_X = 100  # The bottom left X coordinate of the target.
+TARGET_LLEFT_Y = 250  # The bottom left Y coordinate of the target.
+TARGET_WIDTH = 25     # Target width.
+FORCE_FACTOR = 30     # Force factor.
+PROJECTILE_SPEED = 1  # Projectile animation speed.
+NORTH = 90            # North direction corner.
+SOUTH = 270           # South direction corner
+EAST = 0              # East direction corner.
+WEST = 180            # West direction corner.
 
 # Customize window.
 turtle.title('Hit the target')
@@ -412,8 +412,8 @@ Target.showturtle()
 Target.speed(PROJECTILE_SPEED)
 
 # Get shot angle and force from user
-angle = turtle.numinput('Введите угол выстрела снаряда', 'Введите число от 0 до 270:', minval=0, maxval=270)
-force = turtle.numinput('Введите пусковую силу', 'Введите число от 0 до 10:', minval=0, maxval=10)
+angle = turtle.numinput('Enter the angle of the projectile', 'Enter a number from 0 to 270', minval=0, maxval=270)
+force = turtle.numinput('Enter starting force', 'Enter a number from 0.0 to 10.0:', minval=0, maxval=10)
 
 # Calculate distance.
 distance = force * FORCE_FACTOR

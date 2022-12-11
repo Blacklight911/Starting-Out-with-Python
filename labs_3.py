@@ -428,9 +428,9 @@ Target.fd(distance)
 # The logic of hitting a target with a projectile.
 if TARGET_LLEFT_X <= Target.xcor() <= (TARGET_LLEFT_X + TARGET_WIDTH) and TARGET_LLEFT_Y <= Target.ycor() <= (
         TARGET_LLEFT_Y + TARGET_WIDTH):
-    Target.write('Есть пробитие!', align='left', font=('Arial', 16, 'normal'))
+    Target.write('Got it!', align='left', font=('Arial', 16, 'normal'))
 else:
-    Target.write('Промах!', align='left', font=('Arial', 16, 'normal'))
+    Target.write('Miss!', align='left', font=('Arial', 16, 'normal'))
 
 # Exit by clicking the left mouse button.
 turtle.exitonclick()

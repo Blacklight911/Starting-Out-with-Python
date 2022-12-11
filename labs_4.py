@@ -102,6 +102,7 @@
 #         done = True
 #
 # print('Expenses were $', dollars_per_month - sum_dollars)
+import turtle
 
 # # Distance traveled.
 # # User input.
@@ -159,8 +160,8 @@
 #
 # print('Sum numbers =', all_num)
 
-# # Ocean Level.
-# # Variables.
+# Ocean Level.
+# Variables.
 # ocean_level = 1.6
 # all_level = 0
 #
@@ -170,8 +171,97 @@
 #     print(f'In Year: {2022 + year} Ocean level: {all_level:.1f}mm')
 
 # Growth in tuition fees.
-per_year = 290000.0
-percent_per_year = 0.03
-for year in range(1, 5+1):
-    print(f'In year: {2022 + year} The tuition fee will be: {per_year:,.2f} rubles')
-    per_year = per_year + (per_year * percent_per_year)
+# per_year = 290000.0
+# percent_per_year = 0.03
+# for year in range(1, 5 + 1):
+#     print(f'In year: {2022 + year} The tuition fee will be: {per_year:,.2f} rubles')
+#     per_year = per_year + (per_year * percent_per_year)
+
+# # Loss of mass.
+# COLORY = 500
+# person_height = int(input('Enter your height: '))
+#
+# print('Month    Height')
+# print('-------------------------')
+#
+# for month in range(1, 7):
+#     print(f'{month:3}    {person_height * COLORY * (month * 30) // 1000000:8}'
+#           f'.{person_height * COLORY * (month * 30) % 1000000 // 10000} kg')
+
+# # Calculation of the factorial.
+# num = int(input('Enter number factorial: '))
+# factorial = 1
+#
+# for n in range(1, num+1):
+#     factorial *= n
+# print('Factorial number', num, '=', factorial)
+
+# # Population.
+# # Starting fields
+# quantity = float(input('Starting number of organisms: '))
+# average_population = float(input('average daily population increase (as a percentage): ')) / 100
+# reproduction_days = float(input('number of days for reproduction: '))
+# s = 0
+#
+# print('Day      Population')
+#
+# for day in range(1, int(reproduction_days + 1)):
+#     print(f'{day:<2}       {quantity:.7}')
+#     quantity += quantity * average_population
+
+# # Draw loops.
+# n = int(input('Enter value for draw: '))
+# for i in range(n):
+#     for j in range(n - i):
+#         print('*',end=' ')
+#     print()
+
+# Next loop.
+# n_2 = int(input('Enter value for draw: '))
+# for i in range(7):
+#     print('#', end='')
+#     for k in range(i):
+#         print(' ', end='')
+#     for j in range(1):
+#         print('#', end='')
+#     print()
+
+# Turtle Graphics: Repeating Squares.
+# Square = turtle.Turtle()
+# Square.lt(90)
+#
+# for size in range(10, 1000, 10):
+#     for _ in range(4):
+#         Square.fd(size)
+#         Square.lt(90)
+
+# Turtle Graphics: Star pattern
+Star = turtle.Turtle()
+# angle = math.cos(math.pi / n * m) / math.cos(math.pi / n * (m - 1))
+Star.lt(180)
+for i in range(9):
+    Star.fd(100)
+    Star.rt(320)
+
+# # Turtle Graphics: Hypnotic pattern.
+# Hyp = turtle.Turtle()
+# size = 10
+#
+# for i in range(50):
+#     for _ in range(1):
+#         Hyp.fd(size * i)
+#         Hyp.lt(90)
+#
+# # Turtle Graphics: Stop sign.
+# Stop = turtle.Turtle()
+#
+# for _ in range(8):
+#     Stop.fd(300)
+#     Stop.rt(45)
+# Stop.pu()
+# Stop.fd(100)
+# Stop.rt(90)
+# Stop.fd(400)
+# Stop.write('STOP')
+
+turtle.done()

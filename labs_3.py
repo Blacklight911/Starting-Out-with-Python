@@ -430,7 +430,11 @@ if TARGET_LLEFT_X <= Target.xcor() <= (TARGET_LLEFT_X + TARGET_WIDTH) and TARGET
         TARGET_LLEFT_Y + TARGET_WIDTH):
     Target.write('Got it!', align='left', font=('Arial', 16, 'normal'))
 else:
-    Target.write('Miss!', align='left', font=('Arial', 16, 'normal'))
+    if Target.ycor() > TARGET_LLEFT_Y:
+        Target.write('Miss! Take more right', align='left', font=('Arial', 16, 'normal'))
+    elif Target.ycor() < (TARGET_LLEFT_Y + TARGET_WIDTH):
+        Target.write('Miss! Take more left', align='left', font=('Arial', 16, 'normal'))
+
 
 # Exit by clicking the left mouse button.
 turtle.exitonclick()

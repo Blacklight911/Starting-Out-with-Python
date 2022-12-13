@@ -238,10 +238,11 @@ import turtle
 # Turtle Graphics: Star pattern
 Star = turtle.Turtle()
 # angle = math.cos(math.pi / n * m) / math.cos(math.pi / n * (m - 1))
-Star.lt(180)
-for i in range(9):
+Star.lt(150)
+for i in range(3):
     Star.fd(100)
-    Star.rt(320)
+    Star.rt(120)
+
 
 # # Turtle Graphics: Hypnotic pattern.
 # Hyp = turtle.Turtle()

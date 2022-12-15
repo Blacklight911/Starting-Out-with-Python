@@ -108,8 +108,37 @@ import random
 #     print('Property tax:', tax_calculation(TAX, actual_cost, assessed_cost(actual_cost)))
 
 # Calories from fats and carbohydrates.
+# def main():
+#     fats = float(input('Enter the amount of fat in grams per day: '))
+#     carbohydrates = float(input('Enter the amount of carbohydrates in grams per day: '))
+#
+#     def calories_from_fat(value):
+#         return value * 9
+#
+#     def calories_from_carbohydrates(value):
+#         return value * 4
+#
+#     print(f'Number of calories: '
+#           f'Fats :{calories_from_fat(fats)}'
+#           f'Carbohydrates : {calories_from_carbohydrates(carbohydrates)}')
+
+# Seats in the stadium.
+# def main():
+#     seats = ['A', 'B', 'C']
+#     seats_values = (20, 15, 10)
+#     all_sum = 0
+#
+#     for value in range(3):
+#         num = int(input(f'Enter the number of seats sold for {seats[value]}: '))
+#         all_sum += num * seats_values[value]
+#
+#     print(f'Amount of proceeds from ticket sales: ${all_sum}')
+
+# Painting appraiser.
 def main():
-    pass
+    wall = float(input('Enter surface area of the painted wall: '))
+    price = float(input('Enter the price of a 5 liter container of paint: '))
+
 
 if __name__ == '__main__':
     main()

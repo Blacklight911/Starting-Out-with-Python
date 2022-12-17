@@ -1,6 +1,6 @@
 """Algorithmic simulator"""
 import random
-
+import turtle
 
 # # 1
 # def print_times_ten(num):
@@ -177,8 +177,189 @@ def main():
 
     # Maximum of two values.
     def max_of_two_val():
+        value_a = int(input('Enter first value: '))
+        value_b = int(input('Enter second value: '))
+
+        def my_max(a, b):
+            return a if a > b else b
+
+        print('Greater number is:', my_max(value_a, value_b))
+
+    # Drop Height.
+    def drop_height():
+
+        def falling_distance(seconds):
+            return 1 / 2 * 9.8 * seconds ** 2
+
+        for sec in range(1, 11):
+            print(f'{falling_distance(sec):.1f} m/s²')
+
+    # Kinetic energy.
+    def user_input_for_kinetic_en():
+        mass = int(input('Enter body weight in kg: '))
+        speed = int(input('Enter body speed in sc: '))
+        def kinetic_energy(m, s):
+            return 1 / 2 * m * s ** 2
+
+        print('Kinetic energy is:', kinetic_energy(mass , speed))
+
+    # Average score and its level.
+    def average_score_level():
+        avg_grade = []
+        def calc_average(grade_list):
+            return sum(grade_list) / len(grade_list)
+        def determine_grade(av_grade):
+            if av_grade >=90:
+                return 'A'
+            if 80 <= av_grade <= 89:
+                return 'B'
+            if 70 <= av_grade <= 79:
+                return 'C'
+            if 60 <= av_grade <= 69:
+                return 'D'
+            else:
+                return 'F'
+
+        for i in range(5):
+            grade = int(input(f'Enter your {i+1} exam grade: '))
+            avg_grade.append(grade)
+
+        average_grade = calc_average(avg_grade)
+
+        print(f'Your grade is: {determine_grade(average_grade)}')
+
+    # Counter even odd numbers
+    def counter_even_odd_num():
+        odd_num = 0
+        even_num = 0
+
+        for _ in range(100):
+            num = random.randint(1, 100)
+            if num % 2 == 0:
+                even_num += 1
+            else:
+                odd_num += 1
+
+        print(f'Even numbers: {even_num}')
+        print(f'Odd numbers: {odd_num}')
+
+    # Prime numbers.
+    def is_prime(number):
+        count = 0
+        for num in range(1, number+1):
+            if number % num == 0:
+                count += 1
+            if count == 3:
+                return False
+        if number > 1:
+            return True
+    def prime_numbers():
+        usr_num = int(input('Enter your number: '))
+
+
+        if is_prime(usr_num):
+            print(f'Your number {usr_num} is prime number.')
+        else:
+            print(f'Your number {usr_num} is composite number.')
+
+    # List of prime numbers.
+    def list_of_prime_num():
+        count = 0
+        for num in range(1, 100):
+            if is_prime(num):
+                count += 1
+
+        print('Number of prime numbers', count)
+
+    # Future value.
+    def future_value():
+        balance = float(input('Enter current account balance: '))
+        interest_rate = float(input('Enter you monthly interest rate: ')) / 100
+        num_months = int(input('Enter number of months: '))
+
+        def contribution_calc(b, i, m):
+            return b * (1 + i) ** m
+
+        print(f'After {num_months} months, your account will have the amount of '
+              f'{contribution_calc(balance, interest_rate, num_months):.3f}')
+
+    # Random number guessing game.
+    def rand_num_guess_game():
+        print('Guess a number from 1 to 100.')
+
+        def new_guess_num():
+            return random.randint(1, 100)
+
+        def main_game():
+            attempts = 0
+            done = False
+
+            while done is False:
+                usr_input = int(input('Enter value: '))
+
+                if guess_num > usr_input:
+                    print('To little!')
+                    attempts += 1
+                elif guess_num < usr_input:
+                    print('To much!')
+                    attempts += 1
+                else:
+                    print(f'Congratulations you guessed the number {guess_num}.')
+                    print(f'Number of attempts {attempts}.')
+                    done = True
+
+        guess_num = new_guess_num()
+        main_game()
+        new_game_done = False
+
+        while new_game_done is False:
+            new_game = input('Would you like to start a new game? y / n: ')
+            if new_game.lower() == 'n':
+                break
+
+            guess_num = new_guess_num()
+            main_game()
+
+    # Game: rock, paper, scissors.
+    def rock_paper_scissors():
+        def choice(number):
+            if number == 1:
+                return 'Rock'
+            if number == 2:
+                return 'Scissors'
+            if number == 3:
+                return 'Paper'
+        def main_loop():
+            rnd_num = random.randint(1, 3)
+            usr_num = int(input('Enter number: 1 for Rock. 2 for Scissors. 3 for Paper. '))
+
+            pc_choice = choice(rnd_num)
+            usr_choice = choice(usr_num)
+
+            print(f'Computer chose: {pc_choice}.')
+
+
+            if usr_choice == 'Rock' and pc_choice == 'Scissors':
+                print('Congratulations You win!')
+            elif usr_choice == 'Scissors' and pc_choice == 'Rock':
+                print('Computer win!')
+            if usr_choice == 'Scissors' and pc_choice == 'Paper':
+                print('Congratulations You win!')
+            elif usr_choice == 'Paper' and pc_choice == 'Scissors':
+                print('Computer win!')
+            if usr_choice == 'Paper' and pc_choice == 'Rock':
+                print('Congratulations You win!')
+            elif usr_choice == 'Rock' and pc_choice == 'Paper':
+                print('Computer win!')
+            if usr_choice == pc_choice:
+                print('Draw. Starting over.')
+                main_loop()
+
+        main_loop()
+
+    # Turtle graphics: triangle draw function.
+    def triangle(x, y, fill_color):
         pass
 
-    max_of_two_val()
 if __name__ == '__main__':
     main()

@@ -44,6 +44,8 @@ import turtle
 #     return first_name
 
 """Programming exercises"""
+
+
 def main():
     # Kilometer converter.
     def kilometer_converter():
@@ -98,13 +100,12 @@ def main():
     def real_estate_tax():
         TAX = 72
         actual_cost = float(input('Enter actual cost: '))
+
         def assessed_cost(cost):
             return cost * 0.6
 
         def tax_calculation(tax_cost, act_cost, asses_cost):
             return tax_cost * asses_cost / act_cost
-
-
 
         print('Assessed value:', assessed_cost(actual_cost))
         print('Property tax:', tax_calculation(TAX, actual_cost, assessed_cost(actual_cost)))
@@ -155,6 +156,7 @@ def main():
     # Feet to inches.
     def converter_f_to_i():
         f = int(input('Enter feet : '))
+
         def feet_to_inches(feet):
             return feet * 12
 
@@ -168,7 +170,6 @@ def main():
               f'+ {value_b}')
         answer = int(input('Enter answer: '))
         correct_answer = value_a + value_b
-
 
         if correct_answer == answer:
             print(f'Congratulations your answer correct : {answer}')
@@ -198,18 +199,21 @@ def main():
     def user_input_for_kinetic_en():
         mass = int(input('Enter body weight in kg: '))
         speed = int(input('Enter body speed in sc: '))
+
         def kinetic_energy(m, s):
             return 1 / 2 * m * s ** 2
 
-        print('Kinetic energy is:', kinetic_energy(mass , speed))
+        print('Kinetic energy is:', kinetic_energy(mass, speed))
 
     # Average score and its level.
     def average_score_level():
         avg_grade = []
+
         def calc_average(grade_list):
             return sum(grade_list) / len(grade_list)
+
         def determine_grade(av_grade):
-            if av_grade >=90:
+            if av_grade >= 90:
                 return 'A'
             if 80 <= av_grade <= 89:
                 return 'B'
@@ -253,9 +257,9 @@ def main():
                 return False
         if number > 1:
             return True
+
     def prime_numbers():
         usr_num = int(input('Enter your number: '))
-
 
         if is_prime(usr_num):
             print(f'Your number {usr_num} is prime number.')
@@ -329,6 +333,7 @@ def main():
                 return 'Scissors'
             if number == 3:
                 return 'Paper'
+
         def main_loop():
             rnd_num = random.randint(1, 3)
             usr_num = int(input('Enter number: 1 for Rock. 2 for Scissors. 3 for Paper. '))
@@ -337,7 +342,6 @@ def main():
             usr_choice = choice(usr_num)
 
             print(f'Computer chose: {pc_choice}.')
-
 
             if usr_choice == 'Rock' and pc_choice == 'Scissors':
                 print('Congratulations You win!')
@@ -359,7 +363,16 @@ def main():
 
     # Turtle graphics: triangle draw function.
     def triangle(x, y, fill_color):
-        pass
+        delta = turtle.Pen()
+
+        delta.fillcolor(fill_color)
+        delta.begin_fill()
+        delta.setx(x)
+        delta.fd(100-20)
+        delta.sety(y)
+        turtle.done()
+    triangle(20, 100, 'black')
+
 
 if __name__ == '__main__':
     main()

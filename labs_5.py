@@ -1,4 +1,5 @@
 """Algorithmic simulator"""
+import math
 import random
 import turtle
 
@@ -364,12 +365,15 @@ def main():
     # Turtle graphics: triangle draw function.
     def triangle(x, y, fill_color):
         delta = turtle.Pen()
+        delta.up
+        delta.goto(x, y)
 
+        delta.down
         delta.fillcolor(fill_color)
         delta.begin_fill()
-        delta.setx(x)
-        delta.fd(100-20)
-        delta.sety(y)
+        for _ in range(3):
+
+            delta.rt(60)
         turtle.done()
 
     # Turtle graphics: modular snowman.
@@ -469,15 +473,63 @@ def main():
         draw_head()
         draw_hat()
 
-    # Turtle graphics: rectangular pattern.
+    # Turtle graphics: rectangular pattern. ?
     def rect_pattern():
-        width, height = int(input('Enter width: ')), int(input('Enter height: '))
+        #width, height = int(input('Enter width: ')), int(input('Enter height: '))
 
         def draw_pattern(w, h):
-            pass
+            square = turtle.Pen()
+            square.color('black')
+            # First square.
+            for _ in range(4):
+                square.fd(w+h+60)
+                square.lt(90)
+
+            # Cross.
+            square.lt(90)
+            square.fd((w+h+60)//2)
+            square.rt(90)
+            square.fd(w+h+60)
+            square.lt(90)
+            square.fd((w+h+60)//2)
+            square.lt(90)
+            square.fd((w+h+60)//2)
+            square.lt(90)
+            square.fd(w+h+60)
+            square.hideturtle()
+            # Cross diagonal
+            square.lt(90)
+            square.fd((w+h+60)//2)
+            square.lt(135)  # 135
+            square.fd(100+85)
+            # square.lt(135)
+            # square.fd(w+h+60)
+            # square.lt(135)
+            # square.fd((w+h+60)*2)
+            # square.lt(135)
+            #
+            # square.lt(180)
+            # square.goto(20, 20)
+            # square.down()
+
+            # # Second square.
+            # for _ in range(4):
+            #     square.fd(w+h+20)
+            #     square.lt(90)
+            #
+            # square.up()
+            # square.goto(40, 40)
+            # square.down()
+            #
+            # square.begin_fill()
+            # # Third square.
+            # for _ in range(4):
+            #     square.fd(w+h-20)
+            #     square.lt(90)
+            # square.end_fill()
 
     # Turtle graphics: chess board.
-    def chess_board:
+    def chess_board():
         pass
 
     # Turtle graphics: city silhouette.

@@ -14,6 +14,7 @@ def main():
 
         # Close file.
         outfile.close()
+
     def file_read():
         # Open file.
         infile = open('philosophers.txt', 'r')
@@ -26,6 +27,7 @@ def main():
 
         # Print data, in RAM.
         print(file_contents)
+
     def line_read():
         infile = open('philosophers.txt', 'r')
 
@@ -38,6 +40,7 @@ def main():
         print(line1)
         print(line2)
         print(line3)
+
     def write_names():
         # Get three names.
         print('Enter your friends names.')
@@ -56,6 +59,7 @@ def main():
         # Close file.
         my_file.close()
         print('Names were written in friends.txt.')
+
     def strip_newline():
         # Open file with name philosophers.txt.
         infile = open('philosophers.txt', 'r')
@@ -72,6 +76,7 @@ def main():
         print(line1)
         print(line2)
         print(line3)
+
     def appending_to_file():
         # Open file.
         my_file = open('friends.txt', 'a')
@@ -83,6 +88,7 @@ def main():
 
         # Close file.
         my_file.close()
+
     def write_numbers():
         # Open file.
         outfile = open('numbers.txt', 'w')
@@ -94,6 +100,7 @@ def main():
 
         outfile.close()
         print('Data recorded in numbers.txt')
+
     def read_numbers():
         # Open file.
         infile = open('numbers.txt', 'r')
@@ -111,6 +118,7 @@ def main():
 
         # Print nums
         print(f'Total sum: {total}')
+
     def write_sales():
         # Get number of days.
         num_days = int(input('For how many days'
@@ -126,6 +134,7 @@ def main():
             # Close file.
             sales_file.close()
             print('Data recorded in sales.txt.')
+
     def read_sales():
         with open('sales.txt', 'r', encoding='utf-8') as sales_file:
             line = sales_file.readline()
@@ -134,12 +143,14 @@ def main():
                 line = sales_file.readline()
 
             sales_file.close()
+
     def read_sales2():
         with open('sales.txt', 'r', encoding='utf-8') as sales_file:
             for line in sales_file:
                 print(f'{float(line):.2f}')
 
             sales_file.close()
+
     def save_running_times():
         """
         This program saves a sequence of video clip
@@ -154,6 +165,7 @@ def main():
                 video_file.write(f'{float(input(f"Video clip № {count}: "))}\n')
             video_file.close()
             print('Times are saved in video_times.txt')
+
     def read_running_times():
         """
         This program reads values from file
@@ -171,6 +183,7 @@ def main():
                 total += run_time
             video_file.close()
         print(f'The total duration is {total} seconds.')
+
     # 6.12.
     def write_program():
         with open('nums.txt', 'w', encoding='utf-8') as file:
@@ -178,6 +191,7 @@ def main():
                 file.write(f'{line} \n')
 
             file.close()
+
     # 6.14.
     def read_data():
         with open('data.txt', 'r', encoding='utf-8') as file:
@@ -187,12 +201,14 @@ def main():
                 line = file.readline()
 
         file.close()
+
     # 6.15.
     def read_data_m():
         with open('data.txt', 'r', encoding='utf-8') as file:
             for line in file:
                 print(line.rstrip())
             file.close()
+
     def save_emp_records():
         # Get the number of employee records to create.
         num_eps = int(input('How many records do you want to create?'))
@@ -217,6 +233,7 @@ def main():
             # Close file.
             emp_file.close()
             print('Employee records are stored in employees.txt')
+
     def read_emp_records():
         with open('employees.txt', 'r', encoding='utf-8') as emp_file:
             name = emp_file.readline().rstrip('\n')
@@ -233,6 +250,7 @@ def main():
                 name = emp_file.readline()
 
             emp_file.close()
+
     def add_coffee_record():
         another = 'y'
 
@@ -250,6 +268,7 @@ def main():
 
             coffee_file.close()
             print('Data add in coffee.txt.')
+
     def show_coffee_records():
         with open('coffee.txt', 'r', encoding='utf-8') as coffee_file:
             descr = coffee_file.readline()
@@ -263,6 +282,7 @@ def main():
                 descr = coffee_file.readline()
 
             coffee_file.close()
+
     def search_coffee_records():
         found = False
 
@@ -288,6 +308,7 @@ def main():
 
             if not found:
                 print('This value was not found in the file. ')
+
     def modify_coffee_records():
         found = False
 
@@ -324,6 +345,7 @@ def main():
                     print('File updated.')
                 else:
                     print('This value was not found in the file.')
+
     def delete_coffee_record():
         found = False
 
@@ -356,6 +378,8 @@ def main():
                     print('File updated.')
                 else:
                     print('This value was not found in the file.')
+
+
 
 # Call main function.
 if __name__ == '__main__':

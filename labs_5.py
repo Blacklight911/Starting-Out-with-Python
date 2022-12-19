@@ -371,8 +371,118 @@ def main():
         delta.fd(100-20)
         delta.sety(y)
         turtle.done()
-    triangle(20, 100, 'black')
 
+    # Turtle graphics: modular snowman.
+    def modular_snowman():
+        def draw_base():
+            circle_1 = turtle.Pen()
+            circle_1.hideturtle()
+            circle_1.circle(50)
+
+        def draw_mid_section():
+            circle_2 = turtle.Pen()
+            circle_2.hideturtle()
+            circle_2.up()
+            circle_2.goto(0, 100)
+            circle_2.down()
+            circle_2.circle(30)
+
+        def draw_arms():
+            arm_1, arm_2 = turtle.Pen(), turtle.Pen()
+            arm_1.hideturtle()
+            arm_2.hideturtle()
+
+            arm_1.up()
+            arm_2.up()
+            arm_1.goto(-30, 130)
+            arm_2.goto(30, 130)
+            arm_1.down()
+            arm_2.down()
+
+            arm_1.rt(25)
+            arm_1.bk(15)
+            arm_1.rt(55)
+            arm_1.bk(15)
+            arm_1.rt(35)
+            arm_1.bk(5)
+            arm_1.fd(5)
+            arm_1.lt(45)
+            arm_1.bk(5)
+
+            arm_2.lt(35)
+            arm_2.fd(30)
+            arm_2.lt(55)
+            arm_2.fd(5)
+            arm_2.bk(5)
+            arm_2.rt(85)
+            arm_2.fd(5)
+
+        def draw_head():
+            head = turtle.Pen()
+            head.hideturtle()
+            head.up()
+            head.goto(0, 160)
+
+            head.down()
+            head.circle(20)
+            head.up()
+
+            # eyes.
+            head.goto(-10, 180)
+            head.down()
+            head.circle(3)
+            head.up()
+            head.fd(20)
+            head.down()
+            head.circle(3)
+
+            # mouth.
+            head.up()
+            head.goto(-10, 170)
+            head.down()
+            head.fd(20)
+
+        def draw_hat():
+            hat = turtle.Pen()
+            hat.hideturtle()
+            hat.up()
+            hat.goto(-15, 200)
+            hat.down()
+            hat.fillcolor('black')
+            hat.begin_fill()
+            for _ in range(4):
+                hat.fd(30)
+                hat.lt(90)
+            hat.end_fill()
+            hat.fd(45)
+            hat.begin_fill()
+            for _ in range(2):
+                hat.rt(90)
+                hat.fd(7)
+                hat.rt(90)
+                hat.fd(60)
+            hat.end_fill()
+
+        draw_base()
+        draw_mid_section()
+        draw_arms()
+        draw_head()
+        draw_hat()
+
+    # Turtle graphics: rectangular pattern.
+    def rect_pattern():
+        width, height = int(input('Enter width: ')), int(input('Enter height: '))
+
+        def draw_pattern(w, h):
+            pass
+
+    # Turtle graphics: chess board.
+    def chess_board:
+        pass
+
+    # Turtle graphics: city silhouette.
+    def city_silhoette():
+        pass
 
 if __name__ == '__main__':
     main()

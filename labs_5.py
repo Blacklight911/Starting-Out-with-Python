@@ -363,18 +363,27 @@ def main():
         main_loop()
 
     # Turtle graphics: triangle draw function.
-    def triangle(x, y, fill_color):
-        delta = turtle.Pen()
-        delta.up
-        delta.goto(x, y)
+    def draw_triangle():
+        delta = turtle.Turtle()
+        delta.hideturtle()
 
-        delta.down
-        delta.fillcolor(fill_color)
-        delta.begin_fill()
+        positions = []
         for _ in range(3):
+            positions.append((float(turtle.numinput('Input X coordinates', 'Enter value: ')),
+                              float(turtle.numinput('Input Y coordinates', 'Enter value: '))))
 
-            delta.rt(60)
-        turtle.done()
+        color = turtle.textinput('Input color in lowercase','Enter color name: ')
+
+        delta.color(color)
+
+        def draw_and_fill_rect():
+            delta.begin_fill()
+            for i in range(3):
+                delta.setposition(positions[i])
+            delta.setposition(positions[0])
+            delta.end_fill()
+
+        draw_and_fill_rect()
 
     # Turtle graphics: modular snowman.
     def modular_snowman():
@@ -473,68 +482,195 @@ def main():
         draw_head()
         draw_hat()
 
-    # Turtle graphics: rectangular pattern. ?
+    # Turtle graphics: rectangular pattern.
     def rect_pattern():
-        #width, height = int(input('Enter width: ')), int(input('Enter height: '))
+        width, height = int(input('Enter width: ')), int(input('Enter height: '))
 
         def draw_pattern(w, h):
-            square = turtle.Pen()
+            square = turtle.Turtle()
             square.color('black')
             # First square.
-            for _ in range(4):
-                square.fd(w+h+60)
+            for _ in range(2):
+                square.fd(w)
+                square.lt(90)
+                square.fd(h)
                 square.lt(90)
 
-            # Cross.
-            square.lt(90)
-            square.fd((w+h+60)//2)
-            square.rt(90)
-            square.fd(w+h+60)
-            square.lt(90)
-            square.fd((w+h+60)//2)
-            square.lt(90)
-            square.fd((w+h+60)//2)
-            square.lt(90)
-            square.fd(w+h+60)
-            square.hideturtle()
-            # Cross diagonal
-            square.lt(90)
-            square.fd((w+h+60)//2)
-            square.lt(135)  # 135
-            square.fd(100+85)
-            # square.lt(135)
-            # square.fd(w+h+60)
-            # square.lt(135)
-            # square.fd((w+h+60)*2)
-            # square.lt(135)
-            #
-            # square.lt(180)
-            # square.goto(20, 20)
-            # square.down()
+            # Diagonal lines and cross.
+            square.goto(w, h)
+            square.goto(w-w, h)
+            square.goto(w, h-h)
+            square.goto(w/2, h-h)
+            square.goto(w/2, h)
+            square.goto(w, h)
+            square.goto(w, h/2)
+            square.goto(w-w, h/2)
 
-            # # Second square.
-            # for _ in range(4):
-            #     square.fd(w+h+20)
-            #     square.lt(90)
-            #
-            # square.up()
-            # square.goto(40, 40)
-            # square.down()
-            #
-            # square.begin_fill()
-            # # Third square.
-            # for _ in range(4):
-            #     square.fd(w+h-20)
-            #     square.lt(90)
-            # square.end_fill()
+            # Second square.
+            square.penup()
+            square.goto(w/1.2, h/1.2)
+            square.down()
+            square.rt(180)
+            for _ in range(2):
+                square.fd(w/1.5)
+                square.lt(90)
+                square.fd(h/1.5)
+                square.lt(90)
+
+            # Third square.
+            square.penup()
+            square.goto(w/1.5, h/1.5)
+            square.down()
+            square.begin_fill()
+            for _ in range(2):
+                square.fd(w/3.0)
+                square.lt(90)
+                square.fd(h/3.0)
+                square.lt(90)
+            square.end_fill()
+
+
+        draw_pattern(width, height)
 
     # Turtle graphics: chess board.
     def chess_board():
-        pass
+        screen = turtle.Screen()
+        screen.setup(800, 600, 0, 0)
+        screen.setworldcoordinates(0,600, 800, 0)
+        screen.title('Chess board')
+
+        square = turtle.Turtle()
+
+        def draw_square(x_coord, y_coord, color):
+            square.color(color)
+            square.penup()
+            square.goto(x_coord, y_coord)
+            square.pendown()
+            square.begin_fill()
+
+            for _ in range(4):
+                square.fd(120)
+                square.lt(90)
+            square.end_fill()
+
+        for x in range(-10, 800, 240):
+            for y in range(-10, 600, 240):
+                draw_square(x, y, 'black')
+        for x in range(110, 800, 240):
+            for y in range(110, 600, 240):
+                draw_square(x, y, 'black')
 
     # Turtle graphics: city silhouette.
-    def city_silhoette():
-        pass
+    def city_skyline():
+        screen = turtle.Screen()
+        screen.title('City skyline')
+        screen.setup(800, 600, 500, 100)
+        screen.setworldcoordinates(0, 600, 800, 0)
+        screen.bgcolor('black')
+
+
+        def building_outline():
+            building = turtle.Turtle()
+            building.color('gray')
+            building.hideturtle()
+
+            building.up()
+            building.goto(-20, 400)
+            building.begin_fill()
+            building.down()
+
+            building.fd(70)
+            building.rt(90)
+            building.fd(100)
+            building.lt(90)
+            building.fd(130)
+            building.rt(90)
+            building.fd(270)
+            building.lt(90)
+            building.fd(200)
+            building.lt(90)
+            building.fd(300)
+            building.rt(90)
+            building.fd(100)
+            building.rt(90)
+            building.fd(170)
+            building.lt(90)
+            building.fd(100)
+            building.lt(90)
+            building.fd(40)
+            building.fd(100)
+            building.rt(90)
+            building.fd(70)
+            building.lt(90)
+            building.fd(100)
+            building.rt(90)
+            building.fd(150)
+            building.lt(90)
+            building.fd(200)
+            building.lt(90)
+            building.fd(820)
+            building.lt(90)
+            building.fd(200)
+
+            building.end_fill()
+
+        def building_windows():
+            window = turtle.Turtle()
+            window.color('yellow')
+            window.hideturtle()
+
+            def square(x_coord, y_coord):
+                window.up()
+                window.goto(x_coord, y_coord)
+                window.down()
+
+                window.begin_fill()
+                for _ in range(4):
+                    window.fd(30)
+                    window.lt(90)
+                window.end_fill()
+
+            # Middle building.
+            for _ in range(8):
+                rand_x = random.randrange(210, 321, 60)
+                rand_y = random.randrange(40, 200, 60)
+                square(rand_x, rand_y)
+
+            # Left building.
+            square(70, 310)
+            square(130, 310)
+
+            # Right building.
+            square(500 ,170)
+
+        def random_stars():
+            star = turtle.Turtle()
+            star.color('azure')
+
+            def draw_star(x_coord, y_coord):
+                star.up()
+                star.goto(x_coord, y_coord)
+                star.down()
+                star.dot(7)
+
+            for _ in range(8):
+                rand_x_1 = random.randrange(10, 175)
+                rand_y_1 = random.randrange(10, 235)
+                draw_star(rand_x_1, rand_y_1)
+
+            for _ in range(8):
+                rand_x_1 = random.randrange(385, 470)
+                rand_y_1 = random.randrange(10, 280)
+                draw_star(rand_x_1, rand_y_1)
+
+            for _ in range(8):
+                rand_x_1 = random.randrange(590, 790)
+                rand_y_1 = random.randrange(10, 280)
+                draw_star(rand_x_1, rand_y_1)
+
+        building_outline()
+        building_windows()
+        random_stars()
 
 if __name__ == '__main__':
     main()

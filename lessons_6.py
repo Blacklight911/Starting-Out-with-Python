@@ -316,7 +316,7 @@ def main():
         new_qty = int(input('Enter new quantity: '))
 
         with open('coffee.txt', 'r', encoding='utf-8') as coffee_file:
-            with open('temp.txt', 'w') as temp_file:
+            with open('temp.txt', 'w', encoding='utf-8') as temp_file:
 
                 descr = coffee_file.readline()
 
@@ -379,7 +379,7 @@ def main():
                 else:
                     print('This value was not found in the file.')
 
-
+    
 
 # Call main function.
 if __name__ == '__main__':

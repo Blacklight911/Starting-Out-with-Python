@@ -1,5 +1,6 @@
 """Algorithmic simulator"""
 import os
+import random
 
 
 # 1.
@@ -113,4 +114,171 @@ def change_an_entry():
                 print('No name in list')
 
 """Programming exercises."""
+# Output file to screen.
+def output_file_to_screen():
+    with open('numbers.txt', 'r', encoding='utf-8') as file:
+        for line in file:
+            print(line.rstrip('\n'))
+        file.close()
 
+# Displaying the top of the file.
+def display_top_of_file():
+    filename = input("Input file name: ").lower() + '.txt'
+
+    with open(filename, 'r', encoding='utf-8') as file:
+        count = 0
+        for line in file:
+            print(line.rstrip('\n'))
+            count += 1
+            if count == 5:
+                break
+
+    file.close()
+
+# Line numbers.
+def line_numbers():
+    filename = input("Input file name: ").lower() + '.txt'
+
+    with open(filename, 'r', encoding='utf-8') as file:
+        for count, line in enumerate(file):
+            print(f'{count+1}: {line.rstrip()}')
+        file.close()
+
+# Value counter.
+def value_counter():
+    with open('names.txt', 'r', encoding='utf-8') as file:
+        count = 0
+        for _ in file:
+            count += 1
+        print('Names in list:',count)
+        file.close()
+
+# Sum of numbers.
+def sum_of_numbers():
+    with open('numbers.txt', 'r', encoding='utf-8') as file:
+        total = 0
+        for line in file:
+            total += int(line)
+        print('Total sum:', total)
+        file.close()
+
+# Average of numbers.
+def average_of_numbers():
+    with open('numbers.txt', 'r', encoding='utf-8') as file:
+        total = 0
+        count = 0
+        for line in file:
+            count += 1
+            total += int(line)
+        print('Average:', total/count)
+        file.close()
+
+# Program for writing a file with random numbers.
+def rand_number_writer():
+    value = int(input('Enter the number of random numbers to write to the file: '))
+
+    with open('random_numbers.txt', 'w', encoding='utf-8') as file:
+        for line in range(value):
+            file.write(f'{str(random.randint(1, 500))}\n')
+        file.close()
+
+# Random number file reader.
+def rand_number_reader():
+    with open('random_numbers.txt', 'r', encoding='utf-8') as file:
+        count = 0
+        total = 0
+        for line in file:
+            count += 1
+            total += int(line)
+
+        print(f'Total sum numbers: {total}')
+        print(f'Numbers count: {count}')
+    file.close()
+
+# Exception Handling.
+def exception_handling():
+    with open('numbers.txt', 'r', encoding='utf-8') as file:
+        total = 0
+        count = 0
+        try:
+            for line in file:
+                count += 1
+                try:
+                    total += int(line)
+                except ValueError:
+                    print('Error reading number. Number is string not number')
+            print('Average:', total/count)
+        except IOError:
+            print('Error file not exits')
+        file.close()
+
+# Points in golf.
+def golf_points():
+
+    def write_points():
+        with open('golf.txt', 'w', encoding='utf-8') as file:
+            number_players = int(input('Enter number players: '))
+
+            for _ in range(number_players):
+                player_name = input('Enter player name: ')
+                player_points = int(input(f'Enter {player_name} points: '))
+                file.write(f'{player_name}\n')
+                file.write(f'{player_points}\n')
+            file.close()
+
+    def read_points():
+        with open('golf.txt', 'r', encoding='utf-8') as file:
+            for line in file:
+                print(line.rstrip('\n'))
+            file.close()
+
+    write_points()
+    read_points()
+
+# Personal web page generator.
+def web_page_generator():
+    with open('personal_site.html', 'w', encoding='utf-8') as file:
+        user_name = input('Enter your name: ')
+        describe = input('Describe yourself: ')
+        file.write(f'<html>\n'
+                   f'<head>\n'
+                   f'</head>\n'
+                   f'<body>\n'
+                   f' <center>\n'
+                   f'    <h1>{user_name}</h1>\n'
+                   f' </center>\n'
+                   f' <hr />\n'
+                   f' {describe}\n'
+                   f' <hr />\n'
+                   f'</body>\n'
+                   f'</html>\n')
+        file.close()
+
+# Average number of steps.
+def average_num_of_steps():
+    with open('steps.txt', 'r', encoding='utf-8') as file:
+        count = 0
+        month_steps = 0
+        months = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+        str_months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                      'Jul', 'Aug', 'Sen', 'Okt', 'Nov', 'Dec')
+        average_steps = []
+        step = 0
+
+        line = file.readline().rstrip('\n')
+        while line != '':
+            count += 1
+            month_steps += int(line)
+            line = file.readline().rstrip('\n')
+
+            if step <= len(months) and count == months[step]:
+                average_steps.append(month_steps)
+                count = 0
+                month_steps = 0
+                step += 1
+
+        file.close()
+    for i, m in enumerate(months):
+        print(f'Average for {str_months[i]} is {average_steps[i] / m:.2f}.')
+
+average_num_of_steps()

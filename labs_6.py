@@ -5,33 +5,33 @@ import random
 
 # 1.
 def my_func():
-    with open('my_name.txt', 'w', encoding='utf-8') as my_file:
+    with open('Data/my_name.txt', 'w', encoding='utf-8') as my_file:
         my_file.write('Dmitrey')
         my_file.close()
 
 # 2.
 def print_my_name():
-    with open('my_name.txt', 'r', encoding='utf-8') as my_file:
+    with open('Data/my_name.txt', 'r', encoding='utf-8') as my_file:
         print(my_file.readline())
         my_file.close()
 
 # 3.
 def nums_list():
-    with open('number_list.txt', 'w', encoding='utf-8') as file:
+    with open('Data/number_list.txt', 'w', encoding='utf-8') as file:
         for num in range(1, 101):
             file.write(f'{num}\n')
         file.close()
 
 # 4.
 def open_nums_list():
-    with open('number_list.txt', 'r', encoding='utf-8') as file:
+    with open('Data/number_list.txt', 'r', encoding='utf-8') as file:
         for line in file:
             print(line.rstrip('\n'))
         file.close()
 
 # 5.
 def sum_nums_list():
-    with open('number_list.txt', 'r', encoding='utf-8') as file:
+    with open('Data/number_list.txt', 'r', encoding='utf-8') as file:
         count = 0
         for line in file:
             count += int(line)
@@ -41,7 +41,7 @@ def sum_nums_list():
 
 # 6.
 def read_nums_list():
-    with open('number_list.txt', 'a', encoding='utf-8') as file:
+    with open('Data/number_list.txt', 'a', encoding='utf-8') as file:
         print('Job Done')
         file.close()
 
@@ -70,7 +70,7 @@ def del_an_entry():
             temp.close()
 
             os.remove('students.txt')
-            os.rename('temp.txt', 'student.txt')
+            os.rename('temp.txt', 'Data/student.txt')
 
             if found:
                 print('File update')
@@ -83,7 +83,7 @@ def change_an_entry():
     search = input('Enter student name for search: ')
     new_grade = input('Enter new grade: ')
 
-    with open('student.txt', 'r', encoding='utf-8') as file:
+    with open('Data/student.txt', 'r', encoding='utf-8') as file:
         with open('temp.txt', 'w', encoding='utf-8') as temp:
             name = file.readline()
 
@@ -105,8 +105,8 @@ def change_an_entry():
             file.close()
             temp.close()
 
-            os.remove('student.txt')
-            os.rename('temp.txt', 'student.txt')
+            os.remove('Data/student.txt')
+            os.rename('temp.txt', 'Data/student.txt')
 
             if found:
                 print('File update')
@@ -116,7 +116,7 @@ def change_an_entry():
 """Programming exercises."""
 # Output file to screen.
 def output_file_to_screen():
-    with open('numbers.txt', 'r', encoding='utf-8') as file:
+    with open('Data/numbers.txt', 'r', encoding='utf-8') as file:
         for line in file:
             print(line.rstrip('\n'))
         file.close()
@@ -155,7 +155,7 @@ def value_counter():
 
 # Sum of numbers.
 def sum_of_numbers():
-    with open('numbers.txt', 'r', encoding='utf-8') as file:
+    with open('Data/numbers.txt', 'r', encoding='utf-8') as file:
         total = 0
         for line in file:
             total += int(line)
@@ -164,7 +164,7 @@ def sum_of_numbers():
 
 # Average of numbers.
 def average_of_numbers():
-    with open('numbers.txt', 'r', encoding='utf-8') as file:
+    with open('Data/numbers.txt', 'r', encoding='utf-8') as file:
         total = 0
         count = 0
         for line in file:
@@ -177,14 +177,14 @@ def average_of_numbers():
 def rand_number_writer():
     value = int(input('Enter the number of random numbers to write to the file: '))
 
-    with open('random_numbers.txt', 'w', encoding='utf-8') as file:
+    with open('Data/random_numbers.txt', 'w', encoding='utf-8') as file:
         for line in range(value):
             file.write(f'{str(random.randint(1, 500))}\n')
         file.close()
 
 # Random number file reader.
 def rand_number_reader():
-    with open('random_numbers.txt', 'r', encoding='utf-8') as file:
+    with open('Data/random_numbers.txt', 'r', encoding='utf-8') as file:
         count = 0
         total = 0
         for line in file:
@@ -197,7 +197,7 @@ def rand_number_reader():
 
 # Exception Handling.
 def exception_handling():
-    with open('numbers.txt', 'r', encoding='utf-8') as file:
+    with open('Data/numbers.txt', 'r', encoding='utf-8') as file:
         total = 0
         count = 0
         try:
@@ -216,7 +216,7 @@ def exception_handling():
 def golf_points():
 
     def write_points():
-        with open('golf.txt', 'w', encoding='utf-8') as file:
+        with open('Data/golf.txt', 'w', encoding='utf-8') as file:
             number_players = int(input('Enter number players: '))
 
             for _ in range(number_players):
@@ -227,7 +227,7 @@ def golf_points():
             file.close()
 
     def read_points():
-        with open('golf.txt', 'r', encoding='utf-8') as file:
+        with open('Data/golf.txt', 'r', encoding='utf-8') as file:
             for line in file:
                 print(line.rstrip('\n'))
             file.close()
@@ -237,7 +237,7 @@ def golf_points():
 
 # Personal web page generator.
 def web_page_generator():
-    with open('personal_site.html', 'w', encoding='utf-8') as file:
+    with open('Data/personal_site.html', 'w', encoding='utf-8') as file:
         user_name = input('Enter your name: ')
         describe = input('Describe yourself: ')
         file.write(f'<html>\n'
@@ -256,7 +256,7 @@ def web_page_generator():
 
 # Average number of steps.
 def average_num_of_steps():
-    with open('steps.txt', 'r', encoding='utf-8') as file:
+    with open('Data/steps.txt', 'r', encoding='utf-8') as file:
         count = 0
         month_steps = 0
         months = (31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)

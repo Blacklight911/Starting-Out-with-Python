@@ -5,7 +5,7 @@ import os
 def main():
     def file_wrtie():
         # Open file.
-        outfile = open('philosophers.txt', 'w')
+        outfile = open('Data/philosophers.txt', 'w')
 
         # Write the names of three philosophers to a file.
         outfile.write('John Locke\n')
@@ -17,7 +17,7 @@ def main():
 
     def file_read():
         # Open file.
-        infile = open('philosophers.txt', 'r')
+        infile = open('Data/philosophers.txt', 'r')
 
         # Read file.
         file_contents = infile.read()
@@ -29,7 +29,7 @@ def main():
         print(file_contents)
 
     def line_read():
-        infile = open('philosophers.txt', 'r')
+        infile = open('Data/philosophers.txt', 'r')
 
         line1 = infile.readline()
         line2 = infile.readline()
@@ -49,7 +49,7 @@ def main():
         name3 = input('Friend # 3: ')
 
         # Open file.
-        my_file = open('friends.txt', 'w')
+        my_file = open('Data/friends.txt', 'w')
 
         # Write names in file.
         my_file.write(f'{name1}\n')
@@ -62,7 +62,7 @@ def main():
 
     def strip_newline():
         # Open file with name philosophers.txt.
-        infile = open('philosophers.txt', 'r')
+        infile = open('Data/philosophers.txt', 'r')
 
         # Read three lines and Del \n from each string value.
         line1 = infile.readline().rstrip('\n')
@@ -79,7 +79,7 @@ def main():
 
     def appending_to_file():
         # Open file.
-        my_file = open('friends.txt', 'a')
+        my_file = open('Data/friends.txt', 'a')
 
         # Write in file.
         my_file.write('Mat\n')
@@ -91,7 +91,7 @@ def main():
 
     def write_numbers():
         # Open file.
-        outfile = open('numbers.txt', 'w')
+        outfile = open('Data/numbers.txt', 'w')
 
         # Get three numbers from the user.
         # And write them to a file.
@@ -103,7 +103,7 @@ def main():
 
     def read_numbers():
         # Open file.
-        infile = open('numbers.txt', 'r')
+        infile = open('Data/numbers.txt', 'r')
 
         # Summ total nums.
         total = 0
@@ -126,7 +126,7 @@ def main():
 
         # Create and write file.
         # Get sum sales for each day.
-        with open('sales.txt', 'w', encoding='utf-8') as sales_file:
+        with open('Data/sales.txt', 'w', encoding='utf-8') as sales_file:
             for count in range(1, num_days+1):
                 # Get sales in a day
                 sales = float(input(f'Enter daily sales № {count}: '))
@@ -136,7 +136,7 @@ def main():
             print('Data recorded in sales.txt.')
 
     def read_sales():
-        with open('sales.txt', 'r', encoding='utf-8') as sales_file:
+        with open('Data/sales.txt', 'r', encoding='utf-8') as sales_file:
             line = sales_file.readline()
             while line != '':
                 print(f'{float(line):.2f}')
@@ -145,7 +145,7 @@ def main():
             sales_file.close()
 
     def read_sales2():
-        with open('sales.txt', 'r', encoding='utf-8') as sales_file:
+        with open('Data/sales.txt', 'r', encoding='utf-8') as sales_file:
             for line in sales_file:
                 print(f'{float(line):.2f}')
 
@@ -159,7 +159,7 @@ def main():
         # Take value video clips in project.
         num_videos = int(input('How much video clips in project? '))
 
-        with open('video_times.txt', 'w', encoding='utf-8') as video_file:
+        with open('Data/video_times.txt', 'w', encoding='utf-8') as video_file:
             # Get the duration of each video clip and write it to a file.
             for count in range(1, num_videos+1):
                 video_file.write(f'{float(input(f"Video clip № {count}: "))}\n')
@@ -174,7 +174,7 @@ def main():
         total = 0.0
         count = 0
 
-        with open('video_times.txt', 'r', encoding='utf-8') as video_file:
+        with open('Data/video_times.txt', 'r', encoding='utf-8') as video_file:
             for line in video_file:
                 run_time = float(line)
                 count += 1
@@ -186,7 +186,7 @@ def main():
 
     # 6.12.
     def write_program():
-        with open('nums.txt', 'w', encoding='utf-8') as file:
+        with open('Data/nums.txt', 'w', encoding='utf-8') as file:
             for line in range(1, 11):
                 file.write(f'{line} \n')
 
@@ -194,7 +194,7 @@ def main():
 
     # 6.14.
     def read_data():
-        with open('data.txt', 'r', encoding='utf-8') as file:
+        with open('Data/data.txt', 'r', encoding='utf-8') as file:
             line = file.readline()
             while line != '':
                 print(line.rstrip())
@@ -204,7 +204,7 @@ def main():
 
     # 6.15.
     def read_data_m():
-        with open('data.txt', 'r', encoding='utf-8') as file:
+        with open('Data/data.txt', 'r', encoding='utf-8') as file:
             for line in file:
                 print(line.rstrip())
             file.close()
@@ -214,7 +214,7 @@ def main():
         num_eps = int(input('How many records do you want to create?'))
 
         # Open file.
-        with open('employees.txt', 'w', encoding='utf-8') as emp_file:
+        with open('Data/employees.txt', 'w', encoding='utf-8') as emp_file:
             # Get the details of each employee and record them.
             for count in range(1, num_eps+1):
                 print(f'Enter details of employee № {count}')
@@ -235,7 +235,7 @@ def main():
             print('Employee records are stored in employees.txt')
 
     def read_emp_records():
-        with open('employees.txt', 'r', encoding='utf-8') as emp_file:
+        with open('Data/employees.txt', 'r', encoding='utf-8') as emp_file:
             name = emp_file.readline().rstrip('\n')
             while name != '':
                 name = name.rstrip('\n')
@@ -254,7 +254,7 @@ def main():
     def add_coffee_record():
         another = 'y'
 
-        with open('coffee.txt', 'a', encoding='utf-8') as coffee_file:
+        with open('Data/coffee.txt', 'a', encoding='utf-8') as coffee_file:
             while another == 'y':
                 print('Enter next coffee mark.')
                 descr = input('Description: ')
@@ -270,7 +270,7 @@ def main():
             print('Data add in coffee.txt.')
 
     def show_coffee_records():
-        with open('coffee.txt', 'r', encoding='utf-8') as coffee_file:
+        with open('Data/coffee.txt', 'r', encoding='utf-8') as coffee_file:
             descr = coffee_file.readline()
             while descr != '':
                 qty = float(coffee_file.readline())
@@ -288,7 +288,7 @@ def main():
 
         search = input('Enter the value you are looking for: ')
 
-        with open('coffee.txt', 'r', encoding='utf-8') as coffee_file:
+        with open('Data/coffee.txt', 'r', encoding='utf-8') as coffee_file:
             descr = coffee_file.readline()
 
             while descr != '':
@@ -315,7 +315,7 @@ def main():
         search = input('Enter search description: ')
         new_qty = int(input('Enter new quantity: '))
 
-        with open('coffee.txt', 'r', encoding='utf-8') as coffee_file:
+        with open('Data/coffee.txt', 'r', encoding='utf-8') as coffee_file:
             with open('temp.txt', 'w', encoding='utf-8') as temp_file:
 
                 descr = coffee_file.readline()
@@ -338,8 +338,8 @@ def main():
                 coffee_file.close()
                 temp_file.close()
 
-                os.remove('coffee.txt')
-                os.rename('temp.txt', 'coffee.txt')
+                os.remove('Data/coffee.txt')
+                os.rename('temp.txt', 'Data/coffee.txt')
 
                 if found:
                     print('File updated.')
@@ -351,7 +351,7 @@ def main():
 
         search = input('Which brand do you want to remove? ')
 
-        with open('coffee.txt', 'r', encoding='utf-8') as coffee_file:
+        with open('Data/coffee.txt', 'r', encoding='utf-8') as coffee_file:
             with open('temp.txt', 'w', encoding='utf-8') as temp_file:
                 descr = coffee_file.readline()
 
@@ -371,8 +371,8 @@ def main():
                 coffee_file.close()
                 temp_file.close()
 
-                os.remove('coffee.txt')
-                os.rename('temp.txt', 'coffee.txt')
+                os.remove('Data/coffee.txt')
+                os.rename('temp.txt', 'Data/coffee.txt')
 
                 if found:
                     print('File updated.')

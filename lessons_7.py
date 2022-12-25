@@ -208,5 +208,6 @@ def main():
         plt.title('sales by quarters')
         plt.show()
 
+# Why are you running ?
 if __name__ == '__main__':
     main()

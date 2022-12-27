@@ -1,5 +1,6 @@
 """Algorithmic simulator"""
 import random
+import matplotlib.pyplot as plt
 
 # # 1.
 # my_list = ['Einstein', 'Newton', 'Copernicus', 'Kepler']
@@ -40,6 +41,7 @@ import random
 # list_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # list_2 = [item for item in list_1 if item % 2 == 0]
 
+
 # 11.
 def create_array_list():
     my_list = [[int(input('Enter value: ')) for col in range(3)] for row in range(5)]
@@ -47,6 +49,8 @@ def create_array_list():
 
 """Programming exercises."""
 # Total Sales.
+
+
 def total_sales():
     total = []
 
@@ -56,6 +60,7 @@ def total_sales():
 
     print('Total: ', sum(total))
 
+
 def lottery_number_generator():
     numbers_list = []
 
@@ -63,6 +68,7 @@ def lottery_number_generator():
         numbers_list.append(random.randint(0, 9))
 
     print(*numbers_list)
+
 
 def rainfall_statistics():
     rainfall_stat = []
@@ -76,6 +82,7 @@ def rainfall_statistics():
     print(f'Maximum rainfall was in {months[rainfall_stat.index(max(rainfall_stat))]}, {max(rainfall_stat)}')
     print(f'Minimum rainfall was in {months[rainfall_stat.index(min(rainfall_stat))]}, {min(rainfall_stat)}')
 
+
 def number_analysis_program():
     nums = []
 
@@ -86,6 +93,7 @@ def number_analysis_program():
     print('Max', max(nums))
     print('Sum', sum(nums))
     print('Avg', sum(nums) / len(nums))
+
 
 def exp_account_number_validation_check():
     accounts = []
@@ -102,6 +110,7 @@ def exp_account_number_validation_check():
     else:
         print('Number invalid')
 
+
 def greater_than_the_number_n():
     num = int(input('Enter value: '))
     numbers = [random.randint(1, 100) for _ in range(10)]
@@ -112,6 +121,7 @@ def greater_than_the_number_n():
                 print(num, end=' ')
 
     greater_n(numbers, num)
+
 
 def driving_license_exam():
     right_answers = []
@@ -147,6 +157,7 @@ def driving_license_exam():
     print(f'Total number of wrong answers: {incorrect}')
     print('Numbers of wong questions ', *incorrect_answers)
 
+
 def name_search():
     girls_names = []
     boys_names = []
@@ -180,6 +191,7 @@ def name_search():
         else:
             DONE = True
 
+
 def population_data():
     data_pop = []
     start_year = 1950
@@ -200,6 +212,7 @@ def population_data():
         print('Error. File not exits.')
     except IndexError:
         print('Error. Index error.')
+
 
 def world_series_champions():
     teams_champions = []
@@ -229,6 +242,7 @@ def world_series_champions():
     except:
         print('An Error has occurred.')
 
+
 def luo_shu_magic_square():
 
     my_list = [[4, 9, 2],
@@ -257,7 +271,96 @@ def luo_shu_magic_square():
     else:
         print('Square not magical.')
 
-def generating_prime_number():
-    pass
 
-generating_prime_number()
+def generating_prime_number():
+    usr_input = int(input('Enter positive number more than 1: '))
+    numbers = list(range(2, usr_input+1))
+
+    def is_prime_num(number):
+        count = 0
+        for n in range(1, number+1):
+            if number % n == 0:
+                count += 1
+
+        if count == 2:
+            return True
+        else:
+            return False
+
+    for n in numbers:
+        if is_prime_num(n):
+            print(n, 'is prime!')
+        else:
+            print(n, 'is composite number.')
+
+
+def magic_ball():
+    answers = []
+    DONE = False
+    try:
+        with open('Data/8_ball_responses.txt', 'r', encoding='utf-8') as file:
+            for line in file:
+                answers.append(line.rstrip('\n'))
+
+        print('This is a magic ball, it answers your questions')
+        while DONE is False:
+            question = input('Enter your question: ')
+            print(answers[random.randint(0, len(answers)-1)])
+            again = input('Would you like to ask another question? y - yes, everything else is - no: ').lower()
+            if again == 'y':
+                continue
+            else:
+                DONE = True
+    except IOError:
+        print('Error. File 8_ball_responses.txt not exits')
+
+
+def pie_chart_of_expenses():
+    list_expenses = []
+    title_name = 'Expenses for the past month'
+
+    try:
+        with open('Data/costs.txt', 'r', encoding='utf-8') as file:
+            for line in file:
+                list_expenses.append(line.rstrip('\n').split('-'))
+
+            file.close()
+
+        # Unpacking values.
+        expenses_names = [n[0] for n in list_expenses]
+        expenses_values = [int(n[1]) for n in list_expenses]
+
+        def create_pie(title, names, values):
+            plt.title(title)
+            plt.pie(values, labels=names, autopct='%1.0f%%')
+            plt.show()
+
+        create_pie(title_name, expenses_names, expenses_values)
+
+    except IOError:
+        print('Error. File costs.txt not exits in folder Data.')
+
+
+def weekly_petrol_price_chart():
+    gas_avg = []
+    num_week = list(range(1, 53))
+    title_name = 'Chart of weekly gasoline prices for 1994 year'
+
+    with open('Data/1994_Weekly_Gas_Averages.txt', 'r', encoding='utf-8') as file:
+        for line in file:
+            gas_avg.append(line.rstrip('\n'))
+        file.close()
+
+    def create_bar(title, values, week):
+        plt.title(title)
+        plt.bar(week, values)
+        plt.xlabel('Week')
+        plt.ylabel('Average price')
+        plt.xticks(week)
+        plt.yticks(values)
+        plt.show()
+
+    create_bar(title_name, gas_avg, num_week)
+
+
+weekly_petrol_price_chart()

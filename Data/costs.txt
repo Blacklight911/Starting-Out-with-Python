@@ -1,0 +1,6 @@
+Rent - 5000
+Petrol - 4000
+Food - 3500
+Clothes - 3700
+Car payments - 5500
+Others - 9700

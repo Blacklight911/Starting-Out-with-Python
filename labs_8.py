@@ -55,6 +55,8 @@
 # print(new_my_string)
 
 """Programming exercises."""
+
+
 # Initials.
 def initials():
     first_name = input('Enter your first name: ')
@@ -62,6 +64,7 @@ def initials():
     pat = input('Enter your patronymic: ')
 
     print(f'{first_name[0]}.{pat[0]}.{last_name[0]}')
+
 
 # Sum of digits in a string.
 def sum_of_digits_in_string():
@@ -74,6 +77,7 @@ def sum_of_digits_in_string():
 
     print('Sum of digits per line:', total)
 
+
 # Date printer.
 def date_printer():
     usr_input = input('Enter date in the format xx/xx/xxxx: ')
@@ -81,6 +85,7 @@ def date_printer():
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
               'Sep', 'Okt', 'Nov', 'Dec']
     print(f'Date: {date_list[0]} {months[int(date_list[1][1])]} {date_list[2]} year.')
+
 
 # Morse code converter
 def morse_code_converter():
@@ -102,6 +107,7 @@ def morse_code_converter():
         morse_code += morse.get(ch)
 
     print(morse_code)
+
 
 # Alphabet translator phone number.
 def alphabet_translator_phone_num():
@@ -127,6 +133,7 @@ def alphabet_translator_phone_num():
 
     print(number)
 
+
 # Average word count.
 def average_word_count():
     lines_list = []
@@ -148,6 +155,7 @@ def average_word_count():
         print('Error file reading.')
     except:
         print('Error.')
+
 
 # Character analysis.
 def character_analysis():
@@ -174,6 +182,7 @@ def character_analysis():
     print(f'Lower characters: {lower_count}')
     print(f'Number characters: {num_count}')
     print(f'Space characters: {space_count}')
+
 
 # Sentence Corrector.
 def sentence_corrector():
@@ -226,6 +235,7 @@ def sentence_corrector():
 
     print(string_capitalize(usr_input))
 
+
 # Vowels and consonants.
 def vowels_and_consonants():
     usr_input = input('Enter your text: ')
@@ -251,8 +261,9 @@ def vowels_and_consonants():
     print('Vowels:', vowel_search(usr_input))
     print('Consonants:', consonants_search(usr_input))
 
+
 # Most frequent symbol.
-def most_frequent_symbol():
+def most_frequent_character():
     # usr_input = input('')
     usr_input = input('Enter your text: ')
 
@@ -281,6 +292,7 @@ def most_frequent_symbol():
     else:
         print(f'Symbol: {count_symbol(space_remove(usr_input))}')
 
+
 # Word separator.
 def word_separator():
     usr_input = input('Enter your text: ')
@@ -297,31 +309,55 @@ def word_separator():
 
     print(separate_words(usr_input).capitalize())
 
-# Youth Jargon.
-def youth_jargon():
-    usr_input = input('Enter your text: ').uppwe()
+
+# Pig Latin.
+def pig_latin():
+    usr_input = input('Enter your text: ').upper()
 
     def change_words(text):
         text_list = text.split()
         for i in range(len(text_list)):
             temp_1 = text_list[i][:1]
             text_list[i] = text_list[i][1:] + temp_1
-            text_list[i] = text_list[i] + 'WHO'
+            text_list[i] = text_list[i] + 'AY'
 
         return ' '.join(text_list)
 
-
     print(change_words(usr_input))
+
 
 # Lottery Powerball
 def lottery_powerball():
+    numbers_list = []
     with open('Data/pbnumbers.txt', 'r', encoding='utf-8') as file:
-        file.re
+        for line in file:
+            numbers_list.append(line.rstrip('\n'))
+
+        file.close()
+
+    def counting_numbers(list_numbers):
+        counting_dict = {}
+        split_numbers = [line.split() for line in list_numbers]
+
+        for l_nums in split_numbers:
+            for num in l_nums:
+                if int(num) in counting_dict:
+                    counting_dict[int(num)] += 1
+                else:
+                    counting_dict[int(num)] = 1
+        return counting_dict
+
+    dict_numbers = sorted(counting_numbers(numbers_list).items())
+    print(dict_numbers)
+
+
 
 lottery_powerball()
+
 
 # Gasoline prices.
 def gasoline_prices():
     pass
+
 
 gasoline_prices()

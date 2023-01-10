@@ -47,4 +47,6 @@ set_1 = {1, 2, 3, 4}
 set_2 = {1, 2, 5, 6}
 set_4 = set_1 & set_2
 print(set_4)
+
+
 """Programing exercises"""

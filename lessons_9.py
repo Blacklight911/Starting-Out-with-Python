@@ -1,4 +1,5 @@
 """Programs"""
+import pickle
 
 # Program 9.2.
 # This program uses dictionary for storage,
@@ -186,10 +187,46 @@ def sets():
     print()
 
 
-set_1 = {1, 2, 3, 4, 5, 6, 7}
+# Program 9.4. pickle_objects.
+def pickle_objects():
+    again = 'y'
 
-set_2 = {item**2 for item in set_1}
-print(set_1, set_2)
-some_set = {'a', 'b', 'c', 'd'}
-some_set_1 = {'b', 'c', 'd', 'g'}
-print(some_set_1.difference(some_set))
+    output_file = open('Data/info.dat', 'wb')
+
+    while again.lower() == 'y':
+        save_data(output_file)
+
+        again = input('Would you like to enter data? (y/n): ')
+
+    output_file.close()
+
+
+def save_data(file):
+    person = {'name': input('Name: '), 'Age': int(input('Age: ')),
+              'weight': float(input('Weight: '))}
+
+    pickle.dump(person, file)
+
+
+def unpickle_objects():
+    end_of_file = False
+
+    input_file = open('Data/info.dat', 'rb')
+
+    while not end_of_file:
+        try:
+            person = pickle.load(input_file)
+
+            display_data(person)
+        except EOFError:
+            end_of_file = True
+
+    input_file.close()
+
+
+def display_data(person):
+    print('Name:', person['name'])
+    print('Age:', person['age'])
+    print('Weight:', person['weight'])
+    print()
+

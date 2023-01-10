@@ -185,3 +185,11 @@ def sets():
 
     print()
 
+
+set_1 = {1, 2, 3, 4, 5, 6, 7}
+
+set_2 = {item**2 for item in set_1}
+print(set_1, set_2)
+some_set = {'a', 'b', 'c', 'd'}
+some_set_1 = {'b', 'c', 'd', 'g'}
+print(some_set_1.difference(some_set))
